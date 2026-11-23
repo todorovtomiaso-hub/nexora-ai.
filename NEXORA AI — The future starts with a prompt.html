@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NEXORA AI — The future starts with a prompt</title>
+<meta name="description" content="Learn AI, explore tools, and build better prompts. Knowledge without limits. Intelligence within reach.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:title" content="NEXORA AI">
+<meta property="og:description" content="Knowledge without limits. Intelligence within reach.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap">
+<style>
+:root{color-scheme:dark;--bg:#050816;--bg2:#0b1230;--line:rgba(140,170,255,.16);--tx:#e8edff;--mut:#9aa7cf;--blue:#3b82ff;--vio:#8b5cf6;--cy:#22d3ee;--glass:rgba(16,24,58,.55);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 Sora,system-ui,-apple-system,Segoe UI,sans-serif;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;letter-spacing:-.02em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(14px);background:rgba(5,8,22,.72);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-weight:700;letter-spacing:.04em;text-decoration:none}
+.logo i{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+.links{display:flex;gap:20px;font-size:14px;color:var(--mut)}
+.links a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+.links a:hover,.links a.on{color:var(--tx);border-color:var(--blue)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:8px 12px;font:inherit;cursor:pointer}
+@media(max-width:780px){.burger{display:block}.links{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg2);padding:12px 20px;border-bottom:1px solid var(--line)}.links.open{display:flex}.links a{padding:12px 0}}
+.hero{position:relative;padding:88px 0 72px;overflow:hidden}
+#fx{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(34px,6vw,64px);font-weight:700}
+.hero p.lead{color:var(--mut);max-width:520px;font-size:18px}
+.tag{color:var(--cy);font-size:14px;margin-bottom:14px}
+.btn{display:inline-block;border:1px solid var(--line);background:var(--glass);color:var(--tx);padding:13px 22px;border-radius:12px;font:600 14px Sora,sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--blue)}
+.btn.pri{background:linear-gradient(135deg,var(--blue),var(--vio));border-color:transparent}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.demo{background:var(--glass);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 0 80px rgba(59,130,255,.12)}
+.demo small{color:var(--mut)}
+.demo .ty{min-height:120px;margin:10px 0;font-size:15px;color:var(--tx)}
+.demo .bar{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:transparent;color:var(--mut);padding:6px 12px;border-radius:99px;font:13px Sora,sans-serif;cursor:pointer;transition:.2s}
+.chip:hover,.chip.on{color:var(--tx);border-color:var(--blue);background:rgba(59,130,255,.15)}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding:56px 0}}
+section.s{padding:72px 0;border-top:1px solid var(--line)}
+section.s>.wrap>h2{font-size:clamp(26px,4vw,38px)}
+.sub{color:var(--mut);max-width:620px;margin-bottom:26px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;align-items:center}
+input[type=search],input[type=text],textarea,select{background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:11px 14px;font:14px Sora,sans-serif;min-width:0}
+input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:17px;margin:0}
+.card p{margin:0;color:var(--mut);font-size:14px}
+.meta{font-size:12px;color:var(--cy)}
+.card .row{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:8px}
+.mini{font-size:12px;padding:7px 12px}
+.logo-m{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--vio))}
+.empty{color:var(--mut);padding:28px;border:1px dashed var(--line);border-radius:14px;text-align:center;grid-column:1/-1}
+details{background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:4px 18px;margin-bottom:10px}
+summary{cursor:pointer;padding:14px 0;font-weight:600}
+details>div{padding-bottom:16px;color:var(--mut);font-size:15px}
+details>div p{margin:.5em 0}
+.lab{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:800px){.lab{grid-template-columns:1fr}}
+.lab label{display:block;font-size:13px;color:var(--mut);margin:12px 0 4px}
+.lab input,.lab textarea,.lab select{width:100%}
+pre{white-space:pre-wrap;background:rgba(0,0,0,.3);border:1px solid var(--line);border-radius:12px;padding:16px;font:13px/1.6 ui-monospace,Menlo,monospace;margin:0;min-height:200px}
+.prog{height:8px;background:rgba(255,255,255,.08);border-radius:9px;overflow:hidden;margin:6px 0 20px}
+.prog b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cy));transition:width .5s}
+.chk{display:flex;gap:10px;align-items:flex-start;padding:6px 0;color:var(--tx);font-size:14px}
+.chk input{margin-top:5px;accent-color:var(--blue)}
+.note{border-left:3px solid var(--vio);padding:10px 16px;background:rgba(139,92,246,.08);border-radius:0 10px 10px 0;color:var(--mut);font-size:14px;margin:18px 0}
+footer{padding:40px 0;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--blue);color:#fff;padding:10px 18px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.3s;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+.skip{position:absolute;left:-999px;top:8px;z-index:60;background:var(--blue);color:#fff;padding:10px 16px;border-radius:8px}.skip:focus{left:12px}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:75%;background:radial-gradient(40% 60% at 25% 30%,rgba(59,130,255,.22),transparent),radial-gradient(35% 55% at 75% 20%,rgba(139,92,246,.18),transparent),radial-gradient(30% 40% at 55% 70%,rgba(34,211,238,.1),transparent);pointer-events:none}
+.card{transition:border-color .25s,transform .25s,box-shadow .25s}.card:hover{border-color:rgba(59,130,255,.5);transform:translateY(-3px);box-shadow:0 12px 40px rgba(59,130,255,.12)}
+summary{list-style:none;position:relative;padding-right:30px}summary::-webkit-details-marker{display:none}summary::after{content:"+";position:absolute;right:0;top:10px;color:var(--cy);font-size:22px;transition:transform .25s}details[open]>summary::after{transform:rotate(45deg)}summary .meta{display:block;font-weight:400;margin-top:2px}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+.count{font-size:13px;color:var(--mut);margin:-8px 0 16px}
+@media(pointer:coarse){.chip,.btn.mini,select,input,.burger{min-height:44px}}
+[hidden]{display:none!important}
+#studio{display:none}body.studio-on #studio{display:block}body.studio-on #main{display:none}
+.feat{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:linear-gradient(120deg,rgba(59,130,255,.16),rgba(139,92,246,.16));border:1px solid rgba(59,130,255,.4);border-radius:16px;padding:18px 22px;margin-bottom:22px}.feat strong{display:block}.feat p{margin:2px 0 0;color:var(--mut);font-size:14px}
+.st{position:relative;padding:44px 0 80px;overflow:hidden}.st::before{content:"";position:absolute;inset:-10% -10% auto;height:420px;background:radial-gradient(40% 60% at 80% 10%,rgba(59,130,255,.2),transparent),radial-gradient(35% 50% at 15% 20%,rgba(139,92,246,.16),transparent);pointer-events:none}
+.stw{position:relative;max-width:860px}.st h1{font-size:clamp(28px,5vw,48px);font-weight:700}
+.back{display:inline-block;color:var(--mut);text-decoration:none;font-size:14px;margin-bottom:18px;padding:6px 0}.back:hover{color:var(--tx)}
+body.studio-on .stw>*{animation:up .6s both}body.studio-on .stw>*:nth-child(2){animation-delay:.06s}body.studio-on .stw>*:nth-child(3){animation-delay:.12s}body.studio-on .stw>*:nth-child(4){animation-delay:.18s}body.studio-on .stw>*:nth-child(n+5){animation-delay:.24s}@keyframes up{from{opacity:0;transform:translateY(16px)}}
+.stgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}@media(max-width:860px){.stgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cat{display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--line);background:var(--glass);color:var(--tx);border-radius:12px;padding:13px;font:14px Sora,sans-serif;cursor:pointer;min-height:48px;transition:border-color .2s,transform .2s,background .2s}.cat:hover{border-color:var(--blue);transform:translateY(-2px)}.cat.on{border-color:var(--cy);background:linear-gradient(120deg,rgba(59,130,255,.25),rgba(139,92,246,.22))}
+.fld{display:block;font-size:13px;color:var(--mut);margin:22px 0 6px}
+.st textarea,.st input,.st select{width:100%}.st textarea{min-height:100px;resize:vertical;line-height:1.6}
+.err{color:#ff8a9b;font-size:13px;min-height:20px;margin:8px 0 0}
+.stout{margin-top:24px;border:1px solid rgba(59,130,255,.4);border-radius:16px;background:rgba(5,8,22,.6);overflow:hidden;animation:up .5s both}
+.sthead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--line)}.acts{display:flex;gap:8px;flex-wrap:wrap}
+.st .stbody{border:0;border-radius:0;background:none;min-height:0;padding:18px;font:13px/1.75 ui-monospace,Menlo,monospace;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Main"><div class="wrap">
+<a class="logo" href="#top">NEXORA <i>AI</i></a>
+<button class="burger" id="bg" aria-expanded="false" aria-controls="lk">Menu</button>
+<div class="links" id="lk">
+<a href="#learn">Learn</a><a href="#tools">AI tools</a><a href="#prompts">Prompts</a><a href="#studio">Prompt Studio</a><a href="#academy">Academy</a><a href="#lab">Lab</a><a href="#roadmap">Roadmap</a>
+</div></div></nav>
+
+<main id="main">
+<header class="hero" id="top">
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="wrap">
+<div>
+<div class="tag">The future starts with a prompt.</div>
+<h1>EXPLORE THE INTELLIGENCE OF TOMORROW.</h1>
+<p class="lead">Discover AI, explore new technologies, access practical knowledge, and turn your ideas into something extraordinary.</p>
+<div class="btns"><a class="btn pri" href="#learn">EXPLORE THE PLATFORM</a><a class="btn" href="#tools">DISCOVER AI TOOLS</a></div>
+</div>
+<div class="demo" aria-label="Prompt anatomy demo">
+<small>Pick a part of a good prompt to see what it does</small>
+<div class="bar" id="anat"></div>
+<div class="ty" id="anatTxt" aria-live="polite"></div>
+<small>Illustrative example, not a live AI response.</small>
+</div>
+</div>
+</header>
+
+<section class="s" id="learn"><div class="wrap">
+<h2>Knowledge Center</h2>
+<p class="sub">Plain-language explainers, written for beginners first with an advanced note under each. Search or filter by topic.</p>
+<div class="tools"><input type="search" id="aq" placeholder="Search articles" aria-label="Search articles"><span id="acats"></span><select id="al" aria-label="Level"><option>All levels</option><option>Beginner</option><option>Advanced</option></select></div>
+<div class="count" id="ac" aria-live="polite"></div><div id="arts"></div>
+</div></section>
+
+<section class="s" id="tools"><div class="wrap">
+<h2>AI Tools Directory</h2>
+<p class="sub">A small, carefully chosen starter list of well-known tools. Pricing changes often, so we link to each official site rather than quote prices.</p>
+<div class="feat"><div><strong>NEXORA Prompt Studio</strong><p>Our free tool for building structured prompts. Runs in your browser; no AI model is connected.</p></div><a class="btn pri" href="#studio">Open Prompt Studio</a></div>
+<div class="tools"><input type="search" id="tq" placeholder="Search tools" aria-label="Search tools"><select id="tc" aria-label="Category"></select><select id="tl" aria-label="Level"><option>All levels</option><option>Beginner</option><option>Professional</option></select><button class="chip" id="tf" aria-pressed="false">Favorites only</button></div>
+<div class="count" id="tc2" aria-live="polite"></div><div class="grid" id="tg"></div>
+</div></section>
+
+<section class="s" id="prompts"><div class="wrap">
+<h2>Prompt Library</h2>
+<p class="sub">Copy, adapt, and save prompts. Saved prompts stay in this browser only.</p>
+<div class="tools"><input type="search" id="pq" placeholder="Search prompts" aria-label="Search prompts"><select id="pc" aria-label="Category"></select><button class="chip" id="pf">Saved only</button></div>
+<div class="grid" id="pg"></div>
+</div></section>
+
+<section class="s" id="academy"><div class="wrap">
+<h2>AI Learning Academy</h2>
+<p class="sub">Four starter lessons for people with no technical background. Tick each step as you finish it; progress is saved in this browser.</p>
+<div id="ptxt" class="sub" style="margin-bottom:0"></div><div class="prog" role="progressbar" aria-label="Academy progress" aria-valuemin="0" aria-valuemax="100"><b id="pbar"></b></div>
+<div id="les"></div>
+</div></section>
+
+<section class="s" id="lab"><div class="wrap">
+<h2>Discovery Lab</h2>
+<p class="sub">Build a structured prompt for any task. This runs entirely in your browser as a template, with no AI model connected. Paste the result into the assistant you prefer.</p>
+<div class="lab">
+<div>
+<label for="l1">Role you want the AI to take</label><input type="text" id="l1" value="a patient marketing coach">
+<label for="l2">Task</label><textarea id="l2" rows="3">Plan a four-week launch for my small online shop.</textarea>
+<label for="l3">Context</label><textarea id="l3" rows="2">I sell handmade candles. I have 300 email subscribers and no ad budget.</textarea>
+<label for="l4">Format</label><select id="l4"><option>a numbered list</option><option>a table</option><option>short paragraphs</option><option>step-by-step instructions</option></select>
+<label for="l5">Tone</label><select id="l5"><option>friendly and clear</option><option>professional</option><option>concise</option><option>encouraging</option></select>
+</div>
+<div><pre id="out" aria-live="polite"></pre><div class="btns" style="margin-top:12px"><button class="btn pri" id="cp">Copy prompt</button></div></div>
+</div>
+</div></section>
+
+<section class="s" id="roadmap"><div class="wrap">
+<h2>What needs a backend</h2>
+<p class="sub">This page is the public, no-account front end. Some features in the full NEXORA plan cannot be done honestly in a static page.</p>
+<details><summary>Accounts, profiles and synced progress</summary><div>Registration, login and cross-device sync need a server and database with secure authentication. Today, favorites, saved prompts and lesson progress are stored in your browser only.</div></details>
+<details><summary>Admin dashboard and moderation</summary><div>Publishing, user-submission review and analytics must be protected by server-side roles, not hidden buttons. They are not included here.</div></details>
+<details><summary>Community and live AI responses</summary><div>A community needs moderation, guidelines and privacy controls. Live AI features need an API key held on a server. Until those exist, the Lab is a template builder, not an AI.</div></details>
+<details><summary>News and fast-changing information</summary><div>This page shows no news feed on purpose. A curated editorial workflow with real dates and authors is required first.</div></details>
+</div></section>
+
+</main>
+<div id="studio"><div class="st"><div class="wrap stw">
+<a class="back" href="#tools">← Back to AI tools</a>
+<div class="tag">Free tool. Runs in your browser.</div>
+<h1>Turn your ideas into powerful AI prompts.</h1>
+<p class="sub">Build a detailed, structured prompt for business, creative work, research, programming and more. Nothing is sent to an AI model: copy the result into the assistant you prefer.</p>
+<div class="fld" id="catl">Choose a category</div>
+<div class="stgrid" id="cats" role="group" aria-labelledby="catl"></div>
+<label class="fld" for="sg">What do you want to achieve? (required)</label>
+<textarea id="sg" maxlength="1500" placeholder="Example: Create a marketing strategy for my new online business"></textarea>
+<label class="fld" for="sx">Add more context (optional)</label>
+<textarea id="sx" maxlength="2500" placeholder="Describe your project, requirements, budget, challenges or any important details"></textarea>
+<label class="fld" for="sa">Who is the result for?</label>
+<input type="text" id="sa" maxlength="250" placeholder="Example: small business owners, students, developers">
+<label class="fld" for="stn">Tone</label>
+<select id="stn"><option>Professional</option><option>Creative</option><option>Friendly and conversational</option><option>Technical and detailed</option><option>Persuasive</option><option>Simple and beginner-friendly</option></select>
+<label class="fld" for="spl">Where will you use it?</label>
+<select id="spl"><option>Any AI model</option><option>Claude</option><option>ChatGPT</option><option>Google Gemini</option><option>Other AI assistant</option></select>
+<div class="err" id="ser" role="alert"></div>
+<button type="button" class="btn pri" id="sgo" style="width:100%;margin-top:6px">Generate my prompt</button>
+<section class="stout" id="sto" hidden aria-live="polite" aria-label="Generated prompt">
+<div class="sthead"><div><div class="meta">Your prompt is ready</div><strong>Created with NEXORA Prompt Studio</strong></div><div class="acts"><button type="button" class="btn mini pri" id="stc">Copy prompt</button><button type="button" class="btn mini" id="std" hidden>Download .txt</button><button type="button" class="btn mini" id="str">Start over</button></div></div>
+<pre class="stbody" id="stp"></pre>
+</section>
+</div></div></div>
+<footer><div class="wrap">NEXORA AI — Knowledge without limits. Intelligence within reach.</div></footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){toast('Saving is blocked in this browser, so changes will not persist.')}}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
+async function copy(t){try{await navigator.clipboard.writeText(t);toast('Copied')}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy');toast('Copied')}catch(x){toast('Copy failed: select the text manually')}a.remove()}}
+
+/* nav */
+$('#bg').onclick=()=>{const o=$('#lk').classList.toggle('open');$('#bg').setAttribute('aria-expanded',o)};
+const closeM=()=>{$('#lk').classList.remove('open');$('#bg').setAttribute('aria-expanded','false')};document.querySelectorAll('.links a').forEach(a=>a.onclick=closeM);addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+const secs=[...document.querySelectorAll('section.s')],lk=[...document.querySelectorAll('.links a')];
+secs.forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)lk.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'}).observe(s));
+
+/* hero particles */
+(function(){const c=$('#fx'),x=c.getContext('2d');if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;let w,h,p=[],vis=true;new IntersectionObserver(e=>{vis=e[0].isIntersecting}).observe(c);
+function rs(){const r=Math.min(devicePixelRatio||1,2);w=c.offsetWidth;h=c.offsetHeight;c.width=w*r;c.height=h*r;x.setTransform(r,0,0,r,0,0);p=Array.from({length:Math.min(55,w/20|0)},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25}))}
+rs();addEventListener('resize',rs);
+(function f(){x.clearRect(0,0,w,h);for(const a of p){a.x=(a.x+a.vx+w)%w;a.y=(a.y+a.vy+h)%h;x.fillStyle='rgba(120,170,255,.7)';x.fillRect(a.x,a.y,1.6,1.6);for(const b of p){const d=Math.hypot(a.x-b.x,a.y-b.y);if(d<110){x.strokeStyle='rgba(90,140,255,'+(.14*(1-d/110))+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}}
+if(!document.hidden&&vis)requestAnimationFrame(f);else setTimeout(f,400)})()})();
+
+/* hero prompt anatomy */
+const AN={Role:['Role','“You are a friendly career coach.” Setting a role tells the AI which knowledge and voice to use.'],Task:['Task','“Help me prepare for a job interview.” Say plainly what you want done.'],Context:['Context','“I am applying for a first marketing job.” Background lets the AI tailor the answer to you.'],Format:['Format','“Give me five likely questions with a short sample answer each.” Describe the shape of the result.']};
+$('#anat').innerHTML=Object.keys(AN).map(k=>`<button class="chip" data-k="${k}">${k}</button>`).join('');
+function anat(k){document.querySelectorAll('#anat .chip').forEach(b=>b.classList.toggle('on',b.dataset.k===k));$('#anatTxt').innerHTML=`<strong>${AN[k][0]}</strong><br>${AN[k][1]}`}
+$('#anat').onclick=e=>{if(e.target.dataset.k)anat(e.target.dataset.k)};anat('Role');
+
+/* articles */
+const ARTS=[
+{id:'a1',cat:'Artificial Intelligence',lvl:'Beginner',min:3,t:'What is AI, in plain words?',b:['Artificial intelligence is software that performs tasks we usually associate with human thinking, such as recognizing speech, translating language, or suggesting what to watch next.','Most AI you meet today learns patterns from large amounts of example data instead of following hand-written rules for every case.','Example: a spam filter is shown many emails labeled spam or not spam, and learns which patterns separate them.'],adv:'Advanced note: “AI” is an umbrella term. Machine learning is one approach inside it, and deep learning is a subset of machine learning that uses multi-layer neural networks.'},
+{id:'a2',cat:'Generative AI',lvl:'Beginner',min:4,t:'How language models answer you',b:['A large language model is trained on a huge amount of text to predict what text is likely to come next. By repeating that step, it can write whole answers.','It does not look facts up like a search engine by default, and it can state wrong things confidently. Always check important claims against a trusted source.','Example: ask it to explain a topic, then ask it to list what you should verify independently.'],adv:'Advanced note: text is split into tokens, and the model has a limited context window, which caps how much of your conversation it can consider at once.'},
+{id:'a3',cat:'Prompt Engineering',lvl:'Beginner',min:3,t:'Writing a prompt that works',b:['Good prompts state who the AI should act as, what to do, the relevant background, and what shape the answer should take.','Be specific about audience and length. “Explain this to a 12-year-old in 100 words” beats “explain this”.','If the first answer misses, reply with what to change instead of starting over.'],adv:'Advanced note: giving one or two worked examples inside the prompt (few-shot prompting) often steers format and style more reliably than description alone.'},
+{id:'a4',cat:'Cybersecurity',lvl:'Beginner',min:3,t:'Using AI tools safely',b:['Do not paste passwords, private customer data, or confidential company documents into any tool unless you know its data policy and are allowed to.','Read each tool’s privacy settings. Many let you opt out of having your chats used for training.','Treat AI-written code and links as untrusted until you have reviewed them.'],adv:'Advanced note: prompt injection is when text inside a document or web page tries to give hidden instructions to an AI that reads it. Limit what actions an AI agent can take on its own.'},
+{id:'a5',cat:'Business Automation',lvl:'Advanced',min:4,t:'Finding tasks worth automating',b:['Good candidates are repetitive, rule-based, and low-risk: sorting email, drafting routine replies, moving data between apps.','Start with one task, measure how long it takes by hand, and keep a human reviewing results before you scale up.','Example: draft support replies with AI, but have a person approve before sending.'],adv:'Advanced note: define what “correct” means before automating, and log inputs and outputs so errors can be traced.'}];
+let acat='All';
+function artCats(){const cs=['All',...new Set(ARTS.map(a=>a.cat))];$('#acats').innerHTML=cs.map(c=>`<button class="chip ${c===acat?'on':''}" aria-pressed="${c===acat}" data-c="${esc(c)}">${esc(c)}</button>`).join(' ')}
+function arts(){const q=$('#aq').value.toLowerCase(),lv=$('#al').value;const l=ARTS.filter(a=>(acat==='All'||a.cat===acat)&&(lv==='All levels'||a.lvl===lv)&&(a.t+a.b.join(' ')+a.cat).toLowerCase().includes(q));
+$('#arts').innerHTML=l.length?l.map(a=>`<details><summary>${esc(a.t)} <span class="meta">${a.cat} · ${a.lvl} · ${a.min} min read</span></summary><div>${a.b.map(p=>`<p>${esc(p)}</p>`).join('')}<div class="note">${esc(a.adv)}</div></div></details>`).join(''):'<div class="empty">No articles match. Clear the search or pick another topic.</div>';$('#ac').textContent=l.length+' of '+ARTS.length+' articles'}
+$('#acats').onclick=e=>{if(e.target.dataset.c){acat=e.target.dataset.c;artCats();arts();const b=[...$('#acats').children].find(x=>x.dataset.c===acat);b&&b.focus()}};$('#aq').oninput=arts;$('#al').onchange=arts;artCats();arts();
+
+/* tools */
+const TOOLS=[
+['ChatGPT','AI assistant','Writing','https://chatgpt.com','General-purpose chat assistant for writing, analysis and coding help.','Drafting, brainstorming, explaining topics','Beginner'],
+['Claude','AI assistant','Writing','https://claude.ai','Chat assistant by Anthropic for writing, analysis, coding and working with documents.','Long documents, writing, coding help','Beginner'],
+['Gemini','AI assistant','Writing','https://gemini.google.com','Google’s AI assistant, connected to Google’s ecosystem.','Everyday questions, Google app users','Beginner'],
+['Perplexity','Answer engine','Research','https://www.perplexity.ai','Search-style assistant that answers with linked sources.','Quick research with citations to check','Beginner'],
+['NotebookLM','Source-based notes','Research','https://notebooklm.google','Lets you upload your own sources and ask questions about them.','Studying and summarizing your own material','Beginner'],
+['GitHub Copilot','Coding assistant','Coding','https://github.com/features/copilot','Code suggestions and chat inside popular code editors.','Writing and explaining code','Professional'],
+['Cursor','AI code editor','Coding','https://cursor.com','Code editor with AI built into the workflow.','Building software with AI help','Professional'],
+['Midjourney','Image generator','Image Generation','https://www.midjourney.com','Generates stylized images from text descriptions.','Concept art, mood boards','Professional'],
+['Canva','Design platform','Design','https://www.canva.com','Online design tool with built-in AI features.','Social posts, presentations, simple designs','Beginner'],
+['Runway','Video generator','Video Creation','https://runwayml.com','AI video generation and editing tools.','Short video clips and effects','Professional'],
+['ElevenLabs','Voice AI','Audio and Voice','https://elevenlabs.io','Text-to-speech and voice tools.','Narration and voiceovers','Beginner'],
+['Zapier','Automation','Automation','https://zapier.com','Connects apps and automates workflows, with AI features.','Moving data between apps without code','Beginner']];
+const tcats=['All categories',...new Set(TOOLS.map(t=>t[2]))];$('#tc').innerHTML=tcats.map(c=>`<option>${c}</option>`).join('');
+let favs=store.get('nx_favs',[]),favOnly=false;
+function tools(){const q=$('#tq').value.toLowerCase(),c=$('#tc').value;const l=TOOLS.filter(t=>(c==='All categories'||t[2]===c)&&(t.join(' ').toLowerCase().includes(q))&&($('#tl').value==='All levels'||t[6]===$('#tl').value)&&(!favOnly||favs.includes(t[0])));$('#tc2').textContent=l.length+' of '+TOOLS.length+' tools';
+$('#tg').innerHTML=l.length?l.map(t=>`<div class="card"><div class="logo-m" aria-hidden="true">${t[0][0]}</div><h3>${t[0]}</h3><div class="meta">${t[2]} · ${t[6]}</div><p>${t[4]}</p><p>Best for: ${t[5]}</p><div class="row"><a class="btn mini" href="${t[3]}" target="_blank" rel="noopener noreferrer">Official site</a><button class="chip mini ${favs.includes(t[0])?'on':''}" data-f="${t[0]}" aria-pressed="${favs.includes(t[0])}">${favs.includes(t[0])?'Saved':'Save'}</button></div><p style="font-size:12px">Pricing: check the official site.</p></div>`).join(''):'<div class="empty">No tools match. Try another search, or turn off Favorites only.</div>'}
+$('#tg').onclick=e=>{const f=e.target.dataset.f;if(f){favs=favs.includes(f)?favs.filter(x=>x!==f):[...favs,f];store.set('nx_favs',favs);tools();const b=[...document.querySelectorAll('#tg [data-f]')].find(x=>x.dataset.f===f);b&&b.focus()}};
+$('#tq').oninput=tools;$('#tc').onchange=tools;$('#tl').onchange=tools;$('#tf').onclick=()=>{favOnly=!favOnly;$('#tf').classList.toggle('on',favOnly);$('#tf').setAttribute('aria-pressed',favOnly);tools()};tools();
+
+/* prompts */
+const PR=[
+['Business','Weekly plan from a messy to-do list','Turns a brain dump into a prioritized plan.','When your week feels overloaded.','Act as a productivity coach. Here is my to-do list: [PASTE LIST]. Group the items, mark what is urgent versus important, and propose a realistic plan for Monday to Friday with no more than 4 hours of focused work per day.','A day-by-day plan with priorities.','Add your working hours and deadlines.'],
+['Marketing','Product description in three tones','Produces short copy variations to compare.','Before publishing a listing.','Write three versions of a 60-word product description for [PRODUCT] aimed at [AUDIENCE]: one friendly, one professional, one playful. Do not invent features. Use only these facts: [FACTS].','Three labeled descriptions.','Always supply the facts yourself so nothing is made up.'],
+['Programming','Explain this code to a beginner','Gets a plain-language walkthrough.','When reading unfamiliar code.','Explain the following code to a beginner. First give a one-sentence summary, then go through it line by line, then list two possible bugs or risks. Code: [PASTE CODE]','Summary, walkthrough and risks.','Name the language and your experience level.'],
+['Education','Study quiz from my notes','Creates practice questions from your own material.','Before an exam.','From the notes below, create 8 questions of increasing difficulty, then give an answer key. Use only information in the notes. Notes: [PASTE NOTES]','Questions plus answer key.','Ask for multiple choice or short answers.'],
+['Research','Compare two options fairly','Structures a balanced comparison.','When choosing between tools or approaches.','Compare [OPTION A] and [OPTION B] for [MY GOAL]. Use a table with criteria, strengths and weaknesses. Mark anything you are unsure about so I can verify it.','A comparison table and caveats.','Add your budget and constraints.'],
+['Personal Development','Break a goal into small steps','Makes a big goal feel doable.','When you are stuck at the start.','My goal is [GOAL] and I have [TIME] per week. Break it into milestones and weekly actions, and tell me the first step I can finish in 15 minutes.','Milestones and a first small step.','Mention what has blocked you before.']];
+const pcats=['All categories',...new Set(PR.map(p=>p[0]))];$('#pc').innerHTML=pcats.map(c=>`<option>${c}</option>`).join('');
+let sp=store.get('nx_prompts',[]),spOnly=false;
+function prompts(){const q=$('#pq').value.toLowerCase(),c=$('#pc').value;const l=PR.map((p,i)=>({p,i})).filter(({p,i})=>(c==='All categories'||p[0]===c)&&p.join(' ').toLowerCase().includes(q)&&(!spOnly||sp.includes(i)));
+$('#pg').innerHTML=l.length?l.map(({p,i})=>`<div class="card"><div class="meta">${p[0]}</div><h3>${p[1]}</h3><p>${p[2]} <em>When: ${p[3]}</em></p><pre style="min-height:0;font-size:12px">${esc(p[4])}</pre><p>Expected output: ${p[5]}</p><p>Tip: ${p[6]}</p><div class="row"><button class="btn mini pri" data-c="${i}">Copy</button><button class="chip mini ${sp.includes(i)?'on':''}" data-s="${i}">${sp.includes(i)?'Saved':'Save'}</button></div></div>`).join(''):'<div class="empty">No prompts match. Clear the filters or save a prompt first.</div>'}
+$('#pg').onclick=e=>{const d=e.target.dataset;if(d.c!==undefined)copy(PR[d.c][4]);if(d.s!==undefined){const i=+d.s;sp=sp.includes(i)?sp.filter(x=>x!==i):[...sp,i];store.set('nx_prompts',sp);prompts();const b=[...document.querySelectorAll('#pg [data-s]')].find(x=>+x.dataset.s===i);b&&b.focus()}};
+$('#pq').oninput=prompts;$('#pc').onchange=prompts;$('#pf').onclick=()=>{spOnly=!spOnly;$('#pf').classList.toggle('on',spOnly);$('#pf').setAttribute('aria-pressed',spOnly);prompts()};prompts();
+
+/* academy */
+const LES=[
+['Lesson 1: What AI can and cannot do','Tell apart tasks AI does well from tasks that need a human.',['Read “What is AI, in plain words?” above.','Write down three tasks from your week that AI could help draft or sort.','Write down one task where a mistake would be costly, and decide to review it yourself.']],
+['Lesson 2: Your first good prompt','Write a prompt with role, task, context and format.',['Open the Discovery Lab below.','Fill in all five fields for a real task of yours.','Copy the prompt and try it in an assistant of your choice.','Reply once with a specific change request instead of starting over.']],
+['Lesson 3: Checking AI answers','Learn to verify before you trust.',['Ask an assistant a question about a topic you know well.','Find one claim and check it against a reliable source.','Note what kinds of errors you spotted.']],
+['Lesson 4: A small workflow','Combine two steps into a repeatable routine.',['Pick a routine task, such as summarizing meeting notes.','Save a prompt for it from the Prompt Library.','Run it twice and write down what you would adjust.']]];
+let pg=store.get('nx_prog',{});
+function les(){let tot=0,done=0;$('#les').innerHTML=LES.map((l,i)=>`<details><summary>${l[0]}</summary><div><p><strong>Objective:</strong> ${l[1]}</p>${l[2].map((s,j)=>{tot++;const k=i+'-'+j;if(pg[k])done++;return`<label class="chk"><input type="checkbox" data-k="${k}" ${pg[k]?'checked':''}> ${s}</label>`}).join('')}</div></details>`).join('');
+$('#pbar').style.width=(done/tot*100)+'%';$('#pbar').parentElement.setAttribute('aria-valuenow',Math.round(done/tot*100));$('#ptxt').textContent=`${done} of ${tot} steps complete`}
+$('#les').addEventListener('change',e=>{if(e.target.dataset.k){pg[e.target.dataset.k]=e.target.checked;store.set('nx_prog',pg);const o=[...document.querySelectorAll('#les details')].map(d=>d.open);les();document.querySelectorAll('#les details').forEach((d,i)=>d.open=o[i]);const cb=document.querySelector('#les [data-k="'+e.target.dataset.k+'"]');cb&&cb.focus()}});les();
+
+/* lab */
+function lab(){const v=i=>$('#l'+i).value.trim();$('#out').textContent=`You are ${v(1)||'a helpful assistant'}.\n\nTask: ${v(2)||'[describe your task]'}\n\nContext: ${v(3)||'[add background]'}\n\nFormat the answer as ${v(4)}. Use a ${v(5)} tone.\n\nIf you are unsure about any fact, say so instead of guessing.`}
+['l1','l2','l3','l4','l5'].forEach(i=>$('#'+i).addEventListener('input',lab));lab();$('#cp').onclick=()=>copy($('#out').textContent);
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});document.querySelectorAll('section.s .wrap>h2,section.s .wrap>.sub,.demo').forEach(el=>{el.classList.add('rv');io.observe(el)})}
+/* prompt studio */
+const SC=[['business','Business','💼','senior business strategist'],['marketing','Marketing','📈','world-class marketing strategist'],['coding','Programming','💻','senior software engineer'],['creative','Creative writing','✍️','professional creative writer'],['education','Education','🎓','expert educator and learning designer'],['research','Research','🔬','professional research analyst'],['design','Design','🎨','senior product and visual designer'],['productivity','Productivity','⚡','productivity and workflow expert']];
+let sc='business',stText='',dl=null;
+function stCats(){$('#cats').innerHTML=SC.map(c=>`<button type="button" class="cat ${c[0]===sc?'on':''}" data-id="${c[0]}" aria-pressed="${c[0]===sc}"><span aria-hidden="true">${c[2]}</span>${c[1]}</button>`).join('')}
+$('#cats').onclick=e=>{const b=e.target.closest('.cat');if(!b)return;sc=b.dataset.id;stCats();$('#cats [data-id="'+sc+'"]').focus()};stCats();
+function stBuild(){const v=i=>$('#'+i).value.trim(),r=SC.find(c=>c[0]===sc)[3];return `# PROFESSIONAL AI PROMPT\n\n## ROLE\nAct as a ${r} with extensive real-world experience.\n\n## OBJECTIVE\n${v('sg')}\n\n## BACKGROUND AND CONTEXT\n${v('sx')||'Use the information provided in the objective. Ask for clarification if essential details are missing.'}\n\n## TARGET AUDIENCE\n${v('sa')||'Determine the most relevant audience from the context.'}\n\n## COMMUNICATION STYLE\n${$('#stn').value}\n\n## INTENDED AI PLATFORM\n${$('#spl').value}\n\n## INSTRUCTIONS\n1. Understand the objective before producing the final answer.\n2. Break complex tasks into clear, logical steps.\n3. Provide specific, practical and actionable recommendations.\n4. Use examples when they improve understanding.\n5. Explain technical concepts in accessible language.\n6. Identify assumptions and missing information.\n7. Never invent facts, sources, statistics or capabilities.\n8. If information is uncertain, clearly communicate the uncertainty.\n9. Optimize the response for usefulness, clarity and quality.\n\n## OUTPUT FORMAT\nPresent the result using clear headings, structured sections and concise explanations. Include an actionable conclusion.\n\nBefore finalizing, review your answer for accuracy, completeness and relevance.\n\nThe goal is not simply to produce an answer. The goal is to deliver an excellent, useful result.`}
+$('#sg').addEventListener('input',()=>{$('#ser').textContent=''});
+$('#sgo').onclick=()=>{if(!$('#sg').value.trim()){$('#ser').textContent='Describe what you want to achieve first.';$('#sg').focus();return}$('#ser').textContent='';stText=stBuild();$('#stp').textContent=stText;$('#sto').hidden=false;$('#stc').textContent='Copy prompt';$('#sto').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'})};
+async function copyOk(t){try{await navigator.clipboard.writeText(t);return true}catch(e){const a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();let ok=false;try{ok=document.execCommand('copy')}catch(x){}a.remove();return ok}}
+$('#stc').onclick=async()=>{if(!stText)return;const ok=await copyOk(stText);$('#stc').textContent=ok?'Copied':'Copy failed';toast(ok?'Prompt copied':'Copy failed: select the text and copy it manually');setTimeout(()=>{$('#stc').textContent='Copy prompt'},2000)};
+(async()=>{try{dl=window.claude?await claude.use('downloads'):null}catch(e){dl=null}if(dl)$('#std').hidden=false})();
+$('#std').onclick=async()=>{if(!dl||!stText)return;try{await dl.save({filename:'nexora-ai-prompt.txt',data:stText});toast('Prompt saved')}catch(e){if(!e||e.code!=='declined')toast('Download is unavailable here. Use Copy instead.')}};
+$('#str').onclick=()=>{['sg','sx','sa'].forEach(i=>{$('#'+i).value=''});$('#stn').selectedIndex=0;$('#spl').selectedIndex=0;sc='business';stCats();$('#sto').hidden=true;stText='';$('#ser').textContent='';$('#sg').focus()};
+let was=false;
+function route(initial){const on=location.hash==='#studio',leaving=was&&!on;was=on;document.body.classList.toggle('studio-on',on);lk.forEach(a=>a.classList.toggle('on',on&&a.getAttribute('href')==='#studio'));document.title=on?'Prompt Studio — NEXORA AI':'NEXORA AI — The future starts with a prompt';
+if(on){scrollTo(0,0);if(!initial){const h=$('#studio h1');h.setAttribute('tabindex','-1');h.focus({preventScroll:true})}return}
+if(leaving){const el=document.getElementById(location.hash.slice(1));requestAnimationFrame(()=>el?el.scrollIntoView():scrollTo(0,0))}}
+addEventListener('hashchange',()=>route(false));route(true);
+</script>
+</body>
+</html>
